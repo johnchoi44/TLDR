@@ -60,7 +60,7 @@ All output goes into the `output/` directory:
 | KB concept files | `output/kb/{category}/` | `{slug}.md` |
 | Daily insights | `output/insights/` | `YYYY-MM-DD-insights.md` |
 | LinkedIn posts | `output/posts/linkedin/` | `{slug}-post.md` |
-| Medium articles | `output/posts/medium/` | `{slug}-article.md` |
+| Blog posts | `output/posts/blogs/` | `{slug}-blog.json` |
 | Interview stories | `output/posts/interviews/` | `{slug}-stories.md` |
 
 ### Knowledge Base Structure
@@ -81,7 +81,7 @@ The `/daily` skill writes insights into a topic-based knowledge base under `outp
 
 This list is extensible — new categories (e.g., `security`, `performance`, `infrastructure`, `testing`) are created when insights clearly belong to a domain not covered above. Check `output/kb/index.md` for the current full list.
 
-Downstream skills (`/linkedin`, `/medium`, `/interview`) read topic-based concept files from `output/kb/{category}/` and the KB index at `output/kb/index.md`. They fall back to reading a user-provided file path directly.
+Downstream skills (`/linkedin`, `/interview`) read topic-based concept files from `output/kb/{category}/` and the KB index at `output/kb/index.md`. They fall back to reading a user-provided file path directly. The `/blogs` skill can read activity logs directly for a given date, or accept KB topics and file paths.
 
 ## Universal Quality Rules
 

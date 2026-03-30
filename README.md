@@ -21,13 +21,13 @@ Generates a LinkedIn post about a specific topic from the knowledge base.
 - Produces a 200-300 word post with a scroll-stopping hook, concrete technical story, and discussion question
 - Output: `output/posts/linkedin/{slug}-post.md`
 
-### `/medium [topic or /path/to/file.md]`
+### `/blogs [YYYY-MM-DD, topic, or /path/to/file.md]`
 
-Generates a Medium article about a specific topic from the knowledge base.
+Generates a blog post from engineering activity logs, a KB topic, or a file.
 
-- Looks up the topic in `output/kb/index.md` and reads matching concept files
-- Produces an 800-1500 word article with code snippets, technical depth, and actionable takeaways
-- Output: `output/posts/medium/{slug}-article.md`
+- Accepts a date (reads logs directly), a topic (looks up KB concepts), or a file path
+- Produces a 600-1200 word post with code snippets, technical depth, and actionable takeaways
+- Output: `output/posts/blogs/{slug}-blog.json` (JSON array with one blog post object)
 
 ### `/interview [topic or /path/to/file.md]`
 
@@ -41,13 +41,14 @@ Generates STAR-format interview stories about a specific topic from the knowledg
 
 ```
 Engineering logs ──► /daily ──► Knowledge Base ──► /linkedin
-                                                ──► /medium
                                                 ──► /interview
+               ──► /blogs
 ```
 
 1. Work on projects as usual — Claude Code logs conversations automatically
 2. Run `/daily 2026-02-24` to extract insights into the KB
 3. Run `/linkedin react-state-batching` (or any topic) to generate a post from KB concepts
+4. Run `/blogs 2026-02-24` to generate a blog post from that day's engineering logs
 
 ## Setup
 
