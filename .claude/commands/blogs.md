@@ -72,29 +72,23 @@ Derive the `date` field in "Mon YYYY" format from the input date. If no date was
 
 Ensure the `output/posts/blogs/` directory exists (use `mkdir -p`).
 
-Write the result to `output/posts/blogs/{slug}-blog.json` as a valid JSON array with exactly one object:
+Write the result to `output/posts/blogs/{slug}-blog.md` as a markdown file with YAML frontmatter:
 
-```json
-[
-  {
-    "title": "<string>",
-    "slug": "<kebab-case-string>",
-    "date": "<Mon YYYY>",
-    "excerpt": "<string>",
-    "content": "<markdown string with \\n newlines>",
-    "imageSrc": null
-  }
-]
+```markdown
+---
+title: "<title>"
+slug: "<kebab-case-string>"
+date: "<Mon YYYY>"
+excerpt: "<1-2 sentence preview with concrete technical detail>"
+---
+
+# <title>
+
+<Full blog post content with ## section headings, code blocks, and all formatting. 600-1200 words.>
+
+---
+
+*Written with the help of AI*
 ```
-
-Field specifications:
-- `title` (string): The blog post title
-- `slug` (string): Kebab-case URL-safe identifier derived from the title
-- `date` (string): "Mon YYYY" format
-- `excerpt` (string): 1-2 sentence preview with concrete technical detail
-- `content` (string): Full Markdown body — use `\n` for newlines, properly escape quotes. Include `#` title heading, `##` section headings, code blocks, and all formatting. 600-1200 words. **Always end with:**\n`---\n\n*Written with the help of AI*`
-- `imageSrc` (string | null): Always `null`
-
-The JSON must be valid and parseable. Pay careful attention to escaping within the `content` string.
 
 After writing the file, confirm the path and show the title and a one-sentence summary.

@@ -60,7 +60,7 @@ All output goes into the `output/` directory:
 | KB concept files | `output/kb/{category}/` | `{slug}.md` |
 | Daily insights | `output/insights/` | `YYYY-MM-DD-insights.md` |
 | LinkedIn posts | `output/posts/linkedin/` | `{slug}-post.md` |
-| Blog posts | `output/posts/blogs/` | `{slug}-blog.json` |
+| Blog posts | `output/posts/blogs/` | `{slug}-blog.md` |
 | Interview stories | `output/posts/interviews/` | `{slug}-stories.md` |
 
 ### Knowledge Base Structure
